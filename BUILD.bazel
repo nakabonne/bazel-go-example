@@ -1,0 +1,21 @@
+load("@bazel_gazelle//:def.bzl", "gazelle")
+
+# gazelle:exclude docs
+# gazelle:exclude dockers
+# gazelle:exclude manifests
+# gazelle:exclude terraform
+# gazelle:exclude template
+# gazelle:exclude vendor
+
+# gazelle:build_file_name BUILD.bazel
+# gazelle:prefix github.com/nakabonne/bazel-go-exmaple
+
+gazelle(
+    name = "gazelle",
+)
+
+load("@com_github_bazelbuild_buildtools//buildifier:def.bzl", "buildifier")
+
+buildifier(
+    name = "buildifier",
+)
